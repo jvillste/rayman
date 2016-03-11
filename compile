@@ -1,0 +1,1 @@
+ghc FIO.hs Color.hs Vector.hs Ray.hs Shape.hs Light.hs Material.hs Object.hs  RayMan.hs  TestScene.hs -o rayman

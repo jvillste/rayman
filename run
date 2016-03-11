@@ -1,0 +1,1 @@
+./compile ; ./rayman > moi.ppm ; qiv moi.ppm

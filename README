@@ -1,0 +1,114 @@
+
+Ray Man ray tracer
+
+This is a ray tracer written in haskell for a course on functional
+programming in Helsinki University of Technology.
+
+I used this haskell raytracer as an inspiration and source of the
+mathematics.
+http://www.nobugs.org/developer/htrace/
+
+Also Hypergraph was a valuable source for the theory.
+http://www.siggraph.org/education/materials/HyperGraph/toc.htm
+
+---------------------------
+Jukka Villstedt (2004)
+jvillste@cc.hut.fi
+
+
+
+Description of the file contents:
+
+RayMan.hs
+---------------
+
+The top most ray tracer code which exposes the interface to the
+raytracer. rayTraceScene does the whole raytracing process. outputPpm
+is used to output the resulting color values to ppm format. viewRays
+forms a matrix of rays that are used to shoot the scene through the
+view plane.
+
+
+TestScene.hs
+---------------
+
+A sample scene description file.
+
+
+Material.hs
+---------------
+
+A material is defined by defining material_emitColor and
+material_reflect. Former specifies how the object emits light in a
+given point in a given lightning. The later specifies the same thing
+but for reflected light.
+
+(Note: NO CHESS BOARD TEXTURE!!)
+
+Shape.hs
+--------------
+
+Shapes or surfaces are specified by defining shape_intersect function
+which tells in which point a given ray intersects with the given shape
+and what is the surface normal on that point.
+
+(Note: NO SPHERE!!)
+
+Object.hs
+--------------
+
+Object is a combination of a shape and a material.
+
+
+Ray.hs
+--------------
+
+Light rays are represented by ray origin and direction vectors. Ray -
+surface intersection is specified by a point, surface normal on that
+point and a value t that is used for depth comparsion of different
+intersections on the same ray.
+
+Light.hs
+--------------
+
+Light is a source of light which is defined by a function
+light_giveLight which tells what kind of light (color) the given light
+source gives to a certain point in the scene. The function is given
+all the shapes in the scene so it can figure out shadowings.
+
+Color.hs
+--------------
+
+Color is specified by three floats. Upper bound is not forced by the
+functions that operate on colors, but when the color is output as text
+during the ppm format generation, the value 1.0 is considered as the
+maximum and the actual value is truncated to that.
+
+
+Vector.hs
+-------------
+
+This is a basic vector library. It would be nice if one could combine
+multiple rotations and transformations to a one transformation
+matrix. Now this is not implemented.
+
+FIO.hs
+-------------
+
+I found a common pattern of making a list of function inputs and
+outputs and operating on that. This library supports this paradigm and
+is used by shape_closestIntersection and object_closestIntersection.
+
+compile
+clean
+run
+-------------
+
+Shell scripts for compiling and viewing the ray traced image.
+
+pyramids.png
+pyramids2.png
+-------------
+Some demo pictures.
+
+
