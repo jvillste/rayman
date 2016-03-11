@@ -5,7 +5,7 @@ import Color
 import Shape
 import Ray
 
-import Maybe
+import Data.Maybe
 
 data Lightning = Lightning { lightning_direction :: Maybe (Vector Float),
 			     lightning_color :: Color }

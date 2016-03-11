@@ -4,8 +4,8 @@ import Vector
 import Ray
 import FIO
 
-import Maybe(fromJust,catMaybes)
-import List(sortBy,minimumBy)
+import Data.Maybe(fromJust,catMaybes)
+import Data.List(sortBy,minimumBy)
 
 data Shape = Plane { plane_normal :: Vector Float,
 		     plane_distance :: Float } |

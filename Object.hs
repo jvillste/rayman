@@ -5,8 +5,8 @@ import Material
 import Ray
 import FIO
 
-import List
-import Maybe
+import Data.List
+import Data.Maybe
 
 data Object = Object { object_shape :: Shape,
 		       object_material :: Material }

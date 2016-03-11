@@ -1,7 +1,7 @@
 module FIO where
 
-import Maybe(catMaybes)
-import List(minimumBy)
+import Data.Maybe(catMaybes)
+import Data.List(minimumBy)
 
 liftFIO f = \(_, o) -> f o
 liftFIO2 f = \(_, o1) (_, o2) -> f o1 o2

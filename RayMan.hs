@@ -19,7 +19,7 @@ import Shape
 import Material
 import Object
 
-import Maybe
+import Data.Maybe
 
 
 

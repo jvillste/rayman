@@ -8,6 +8,7 @@ color_cut color = Color { color_r = min 1.0 (color_r color),
 			  color_g = min 1.0 (color_g color),
 			  color_b = min 1.0 (color_b color) }
 
+color_sum :: Foldable t => t Color -> Color
 color_sum = foldr (%+) color_black
 
 c1 %+ c2 = Color { color_r = color_r c1 + color_r c2,
